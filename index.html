@@ -1,15 +1,13 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Alpha International School</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" crossorigin="anonymous">  <style>
+    * { box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,9 +17,10 @@
       padding: 0;
     }
 
+    /* ---------- Header ---------- */
     .header {
       background: linear-gradient(90deg, #007bff, #0056b3);
-      color: white;
+      color: #fff;
       padding: 20px;
       display: flex;
       justify-content: space-between;
@@ -31,7 +30,7 @@
     .menu-icon h1 {
       margin: 0;
       font-size: 28px;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .menu-icon p {
@@ -41,6 +40,7 @@
       font-style: italic;
     }
 
+    /* ---------- Navigation ---------- */
     nav {
       background-color: #004494;
       display: flex;
@@ -49,7 +49,7 @@
     }
 
     nav a {
-      color: white;
+      color: #fff;
       padding: 14px 20px;
       text-decoration: none;
       transition: background-color 0.3s;
@@ -59,13 +59,31 @@
       background-color: #003370;
     }
 
-    .carousel img {
-      height: 500px;
-      object-fit: cover;
+    /* ---------- Carousel (tall banner) ---------- */
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+      height: 75vh;               /* 75% of the viewport height */
     }
 
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;          /* crop nicely without distortion */
+    }
+
+    @media (max-width: 768px) {
+      .carousel,
+      .carousel-inner,
+      .carousel-item {
+        height: 300px;            /* sensible height on phones */
+      }
+      .menu-icon h1 { font-size: 20px; }
+    }
+
+    /* ---------- Sections ---------- */
     section {
-      background: white;
+      background: #fff;
       padding: 30px;
       margin: 30px auto;
       border-radius: 10px;
@@ -80,45 +98,31 @@
       padding-left: 15px;
     }
 
-    p {
-      line-height: 1.7;
-    }
+    p { line-height: 1.7; }
 
+    /* ---------- Buttons ---------- */
     button {
       background-color: #007BFF;
-      color: white;
+      color: #fff;
       padding: 10px 20px;
       border: none;
       border-radius: 25px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #0056b3;
-    }
+    button:hover { background-color: #0056b3; }
 
+    /* ---------- Footer ---------- */
     footer {
       text-align: center;
       padding: 20px 0;
       background: #0056b3;
-      color: white;
+      color: #fff;
       margin-top: 50px;
     }
-
-    @media (max-width: 768px) {
-      .menu-icon h1 {
-        font-size: 20px;
-      }
-      .carousel img {
-        height: 250px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
+  </style></head><body>
+  <!-- ---------- Header ---------- -->
   <header class="header">
     <div class="logo">
       <img src="logo.png" width="100" height="100" alt="Logo">
@@ -127,17 +131,13 @@
       <h1>Alpha International School</h1>
       <p>Enter To Learn, Exit To Serve</p>
     </div>
-  </header>
-
-  <nav>
+  </header>  <!-- ---------- Navigation ---------- -->  <nav>
     <a class="nav-link" href="#home">Home</a>
     <a class="nav-link" href="#about">About</a>
     <a class="nav-link" href="#fees">Fees</a>
     <a class="nav-link" href="#admission">Admission</a>
     <a class="nav-link" href="#contact">Contact</a>
-  </nav>
-
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  </nav>  <!-- ---------- Carousel ---------- -->  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -162,54 +162,34 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
-
-  <section id="home">
+  </div>  <!-- ---------- Sections ---------- -->  <section id="home">
     <h2>Home</h2>
     <p>Welcome to Alpha International School! We provide quality education and a nurturing environment for students to thrive.</p>
-  </section>
-
-  <section id="about">
+  </section>  <section id="about">
     <h2>About</h2>
     <p>Today's schools do not guide children's moral development, but rather allow them to create their own moral structures and hierarchies. Thus, a growing need is reciprocated in every parent's heart to send their children to an Islamic School, to develop honest, confident and dynamic children in quest of knowledge for lifelong learning and serving with passion to excel at home, school and in society.</p>
     <p>Information technology, communication, international business and high-profile jobs are taking the world by storm and have changed our lives. Our community can ill afford to be a silent spectator to these fast-growing changes and, if we fail to respond, we will be left far behind.</p>
     <p>Alhamdulillah, this School has been established to bring out the best in your child, to live in a sanctuary where they can learn, worship, play and grow, free of social corruption, thus providing an ideal learning environment to enrich individual student's potential and imbibe Islamic values at an early age.</p>
-  </section>
-
-  <section id="mission-vision">
+  </section>  <section id="mission-vision">
     <h2>Mission & Vision</h2>
     <p>Our mission is to foster a love for learning and to develop well-rounded individuals who are prepared for the challenges of the future. Our vision is to create a community of learners who are empowered to make a positive impact in the world.</p>
-  </section>
-
-  <section id="fees">
+  </section>  <section id="fees">
     <h2>Fees Structure</h2>
     <p>Our fees are structured to ensure quality education while being affordable for all families. Please contact us for detailed information.</p>
-  </section>
-
-  <section id="admission">
+  </section>  <section id="admission">
     <h2>Admission Form</h2>
     <p>To apply for admission, please fill out our online admission form. We look forward to welcoming you to our school!</p>
     <a href="https://www.google.com" target="_blank">
       <button>Admission Form</button>
     </a>
-  </section>
-
-  <section id="contact">
+  </section>  <section id="contact">
     <h2>Contact Us</h2>
     <p>If you have any questions or need further information, please feel free to reach out to us:</p>
     <div class="contact-info">
       <p>Email: alphaiskul@gmail.com</p>
       <p>Phone: +91 9433374861 / +91 9143757370</p>
     </div>
-  </section>
-
-  <footer>
+  </section>  <!-- ---------- Footer ---------- -->  <footer>
     &copy; 2025 Alpha International School. All rights reserved.
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</body>
+  </footer>  <!-- ---------- Bootstrap JS ---------- -->  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" crossorigin="anonymous"></script></body>
 </html>
